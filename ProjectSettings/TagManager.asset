@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Recurso
+  - Deadly
   layers:
   - Default
   - TransparentFX

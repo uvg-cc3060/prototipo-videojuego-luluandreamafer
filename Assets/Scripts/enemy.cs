@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class enemy : MonoBehaviour {
+    public EnemyAmmo ammo;
     private NavMeshAgent enemigo = null;
     public Camera jugador = null;
 
@@ -11,9 +12,13 @@ public class enemy : MonoBehaviour {
     public float chaseDistance = 60.0f;
     public float movespeed = 1.0f;
     public float turnspeed = 45.0f;
+    private float ammoSpeed = 0.5f;
+    private float fireTime =0;
 
-    public float damage = 2.0f;
-
+    
+    //para mientras se hara con 1 de damage
+    //public float damage = 2.0f;
+    public float damage = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,10 +32,31 @@ public class enemy : MonoBehaviour {
         {
             Debug.Log(distance);
             enemigo.SetDestination(jugador.transform.position);
+            
             if(distance < attackDistance)
             {
                 //Disparar y bajar health del personaje
+                //para disparar municion
+                Vector3 offset = new Vector3(0.1f, 0.3f,0.1f);
+                fireTime += Time.deltaTime;
+                if (fireTime > 0.2) // si se presiona a la derecha, disparara bolas cada 0.1 seg
+                {
+                    Instantiate(ammo, (Vector3)transform.position + offset, Quaternion.identity);
+                    ammo.character = this.jugador;
+                    fireTime = 0;
+                }
             }
         }
 	}
+
+    private void OnTriggerEnter(Collider collision) {
+        if (collision.tag == "Deadly") {
+            damage--;
+            Destroy(collision.gameObject);
+        }
+        if (damage == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
