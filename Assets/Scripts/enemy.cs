@@ -29,7 +29,7 @@ public class enemy : MonoBehaviour {
             enemigo.SetDestination(jugador.transform.position);
             if(distance < attackDistance)
             {
-                //Bajar health del personaje
+                //Disparar y bajar health del personaje
             }
         }
 	}
