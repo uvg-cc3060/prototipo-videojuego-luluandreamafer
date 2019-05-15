@@ -7,15 +7,21 @@ public class crearRecursos : MonoBehaviour {
 	public GameObject Recursos;
 	public float RangoCreacion = 20f;
     public int arbol = 0;
+    private GUIStyle guiStyle = new GUIStyle(); 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 
     private void OnGUI()
     {
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + arbol);
+        if (arbol >= 60) //aca deberia calcular la cantidad de arboles
+        {
+            guiStyle.fontSize = 50;
+            GUI.Label(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 25, 1000, 500), "GANASTE",guiStyle);
+        }
     }
 
     // Update is called once per frame
