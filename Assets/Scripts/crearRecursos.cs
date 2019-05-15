@@ -5,9 +5,11 @@ using UnityEngine;
 public class crearRecursos : MonoBehaviour {
 
 	public GameObject Recursos;
+    public GameObject Jugador;
 	public float RangoCreacion = 20f;
     public int arbol = 0;
-    private GUIStyle guiStyle = new GUIStyle(); 
+    private GUIStyle guiStyle = new GUIStyle();
+    private int puntos = 0;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +18,7 @@ public class crearRecursos : MonoBehaviour {
 
     private void OnGUI()
     {
+        GUI.Label(new Rect(100,0,100,50),"Recursos = " + puntos);
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + arbol);
         if (arbol >= 60) //aca deberia calcular la cantidad de arboles
         {
@@ -28,16 +31,29 @@ public class crearRecursos : MonoBehaviour {
     void Update () {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Invoke("Crear", 1.0f);
-            arbol += 1;
+            if (puntos > 0)
+            {
+                Invoke("Crear", 1.0f);
+                arbol += 1;
+            }
         }
 		
 	}
 
-	public void Crear(){
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Recurso")//Si toca el tag "Recurso"  que suba puntos
+        {
+            puntos += 1;
+            Destroy(other.gameObject);
+
+        }
+    }
+
+    public void Crear(){
 		Vector3 SpawnPosition = new Vector3 (0,0,0);
-		SpawnPosition = this.transform.position - Random.onUnitSphere * RangoCreacion;
-		SpawnPosition = new Vector3 (SpawnPosition.x, SpawnPosition.y, SpawnPosition.z);
+		SpawnPosition = this.transform.position;
+		SpawnPosition = new Vector3 (transform.position.x - 10.0f, transform.position.y - 2.0f, SpawnPosition.z);
 
 		GameObject Recurso = Instantiate (Recursos, SpawnPosition, Quaternion.identity);
 
