@@ -30,7 +30,6 @@ public class enemy : MonoBehaviour {
         float distance = Vector3.Distance(enemigo.transform.position, jugador.transform.position);
         if ( distance < chaseDistance)
         {
-            Debug.Log(distance);
             enemigo.SetDestination(jugador.transform.position);
             
             if(distance < attackDistance)
@@ -49,14 +48,14 @@ public class enemy : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider collision) {
-        if (collision.tag == "Deadly") {
+     void OnTriggerEnter(Collider collision) {
+        if (collision.tag=="Weapon") {
             damage--;
-            Destroy(collision.gameObject);
         }
         if (damage == 0)
         {
             Destroy(this.gameObject);
         }
+        
     }
 }

@@ -13,6 +13,7 @@ public class crearRecursos : MonoBehaviour {
     private GUIStyle guiStyle = new GUIStyle();
     private int puntos = 0;
     private int ammo = 0;
+    private int damage = 10;
     public static bool hasWeapon = false;
 
     // Use this for initialization
@@ -44,19 +45,11 @@ public class crearRecursos : MonoBehaviour {
                 puntos -= 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.X)) //X para disparar
-        {
-            if (hasWeapon)
-            {
-                Invoke("Atacar",1.0f);
-            }
-        }
 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entre");
         if (other.tag == "Recurso")//Si toca el tag "Recurso"  que suba puntos
         {
             puntos += 1;
@@ -71,6 +64,10 @@ public class crearRecursos : MonoBehaviour {
         if (other.tag == "Weapon")//Indica que tiene arma
         {
             hasWeapon = true;
+        }
+        if (other.tag=="Deadly")
+        {
+            damage--;
         }
     }
 
