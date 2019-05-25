@@ -7,6 +7,9 @@ TagManager:
   - Fire
   - Recurso
   - Deadly
+  - Weapon
+  - Hand
+  - Ammo
   layers:
   - Default
   - TransparentFX
