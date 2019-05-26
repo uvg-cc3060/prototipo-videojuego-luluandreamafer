@@ -12,6 +12,7 @@ TagManager:
   - Ammo
   - Enemy
   - Tree
+  - Ground
   layers:
   - Default
   - TransparentFX
