@@ -27,7 +27,6 @@ public class crearRecursos : MonoBehaviour {
     private void OnGUI()
     {
         GUI.Label(new Rect(50,0,100,50),"Recursos = " + puntos);
-        GUI.Label(new Rect(Screen.width/2, 0, 100, 50), "Flechas = " + ammo);
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + arbol);
         if (arbol >= 60) //aca deberia calcular la cantidad de arboles
         {
@@ -72,7 +71,7 @@ public class crearRecursos : MonoBehaviour {
             ammo += 1;
             Destroy(other.gameObject);
         }
-        if (other.tag == "Weapon")//Indica que tiene arma
+        if (other.tag == "Weapon")//Indica que tiene arma, si esta en true no deberia dejar que agarrase otra (?)
         {
             hasWeapon = true;
         }
