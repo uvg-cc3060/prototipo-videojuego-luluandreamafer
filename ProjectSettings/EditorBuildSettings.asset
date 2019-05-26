@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 26e7d59b3485c194b9995bd3e37853bb
+  - enabled: 1
+    path: Assets/Scenes/Oleada.unity
+    guid: 25cf7c18ae127d04ba152cdbff4792ae
   m_configObjects: {}

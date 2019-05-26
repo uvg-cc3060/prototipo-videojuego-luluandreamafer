@@ -18,6 +18,8 @@ public class crearRecursos : MonoBehaviour {
     private int ammo = 0;
     private int damage = 2;
     public static bool hasWeapon = false;
+    private float EndingSceneDelay = 10f;
+    private float timeElapsed = 0;
 
     // Use this for initialization
     void Start () {
@@ -57,6 +59,13 @@ public class crearRecursos : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        timeElapsed += Time.deltaTime;
+
+        if(timeElapsed>EndingSceneDelay)
+        {
+            SceneManager.LoadScene(sceneName: "Oleada");
+        }
+
         if (Input.GetKeyDown(KeyCode.Z)) //Z para plantar
         {
             if (puntos > 0)
