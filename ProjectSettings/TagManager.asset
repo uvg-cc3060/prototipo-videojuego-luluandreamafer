@@ -11,6 +11,7 @@ TagManager:
   - Hand
   - Ammo
   - Enemy
+  - Tree
   layers:
   - Default
   - TransparentFX

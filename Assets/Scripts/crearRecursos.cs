@@ -10,7 +10,8 @@ public class crearRecursos : MonoBehaviour {
     public GameObject Flecha;
     public GameObject Jugador;
 	public float RangoCreacion = 20f;
-    public int arbol = 0;
+    public static int arbol = 0;
+    public static int totalarboles = 0;
     private GUIStyle guiStyle = new GUIStyle();
     private GUIStyle guiLose = new GUIStyle();
     private int puntos = 0;
@@ -20,19 +21,31 @@ public class crearRecursos : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        totalarboles = GameObject.FindGameObjectsWithTag("Tree").Length;
+    }
 
+    public static bool getFraccion()
+    {
+        if (arbol != 0)
+        {
+            return totalarboles / arbol <= 0;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
 
     private void OnGUI()
     {
         GUI.Label(new Rect(50,0,100,50),"Recursos = " + puntos);
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + arbol);
-        if (arbol >= 60) //aca deberia calcular la cantidad de arboles
+        /*if (totalarboles/arbol<=3) //menor o igual porque si es igual, es un tercio, si es menor es porque es mas de un tercio
         {
             guiStyle.fontSize = 50;
             GUI.Label(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 25, 1000, 500), "GANASTE",guiStyle);
-        }
+        }*/
         if (damage <= 0)
         {
             guiLose.fontSize = 50;
@@ -44,6 +57,7 @@ public class crearRecursos : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Debug.Log(totalarboles);
         if (Input.GetKeyDown(KeyCode.Z)) //Z para plantar
         {
             if (puntos > 0)
