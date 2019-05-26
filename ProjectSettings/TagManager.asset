@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Hand
   - Ammo
+  - Enemy
   layers:
   - Default
   - TransparentFX

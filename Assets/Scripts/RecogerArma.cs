@@ -32,11 +32,5 @@ public class RecogerArma : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Debug.Log("Hit Me with your best shot");
-        }
-    }
+
 }

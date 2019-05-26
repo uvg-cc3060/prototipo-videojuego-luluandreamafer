@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class crearRecursos : MonoBehaviour {
 
@@ -11,9 +12,10 @@ public class crearRecursos : MonoBehaviour {
 	public float RangoCreacion = 20f;
     public int arbol = 0;
     private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle guiLose = new GUIStyle();
     private int puntos = 0;
     private int ammo = 0;
-    private int damage = 10;
+    private int damage = 2;
     public static bool hasWeapon = false;
 
     // Use this for initialization
@@ -32,6 +34,13 @@ public class crearRecursos : MonoBehaviour {
             guiStyle.fontSize = 50;
             GUI.Label(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 25, 1000, 500), "GANASTE",guiStyle);
         }
+        if (damage <= 0)
+        {
+            guiLose.fontSize = 50;
+            guiLose.normal.textColor = Color.red;
+            GUI.Label(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 25, 1000, 500), "PERDISTE", guiLose);
+            SceneManager.LoadScene(sceneName: "MainMenu");
+        }
     }
 
     // Update is called once per frame
@@ -45,6 +54,8 @@ public class crearRecursos : MonoBehaviour {
                 puntos -= 1;
             }
         }
+
+        
 
     }
 
