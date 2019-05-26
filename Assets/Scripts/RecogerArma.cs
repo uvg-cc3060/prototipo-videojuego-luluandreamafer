@@ -5,6 +5,7 @@ using UnityEngine;
 public class RecogerArma : MonoBehaviour
 {
     public Transform onHand;
+    private bool hitSomething = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,41 @@ public class RecogerArma : MonoBehaviour
             this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
             
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) & !hitSomething)
             {
                 
-                this.transform.position += Camera.main.transform.forward*2;
-                GetComponent<Rigidbody>().useGravity = true;
-                GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 20;
-                crearRecursos.hasWeapon = false;
                 this.transform.parent = null;
+
+                this.transform.position += Camera.main.transform.forward*2;
+                this.GetComponent<Rigidbody>().useGravity = true;
+                this.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 20;
+                crearRecursos.hasWeapon = false;
+
+
             }
+            
         }
+        /*if (this.transform.position.y <= 0.42)
+        {
+            Vector3 SpawnPosition = this.transform.position;
+            SpawnPosition.y = 0.42f;
+            this.transform.SetPositionAndRotation(SpawnPosition, Quaternion.identity);
+        }*/
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if ((collision.tag != "Player" & collision.tag!="Enemy") & !crearRecursos.hasWeapon)
+        {
+            hitSomething = true;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+        else
+        {
+            hitSomething = false;
+        }
+        
+        
     }
 
 

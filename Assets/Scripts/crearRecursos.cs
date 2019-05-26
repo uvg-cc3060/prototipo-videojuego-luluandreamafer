@@ -57,7 +57,6 @@ public class crearRecursos : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Debug.Log(totalarboles);
         if (Input.GetKeyDown(KeyCode.Z)) //Z para plantar
         {
             if (puntos > 0)
