@@ -64,7 +64,7 @@ public class crearRecursos : MonoBehaviour {
         if (other.tag == "Recurso")//Si toca el tag "Recurso"  que suba puntos
         {
             puntos += 1;
-            
+            Destroy(other.gameObject);
 
         }
         if (other.tag == "Ammo")//Si toca el tag "Ammo" sube ammo
@@ -84,6 +84,7 @@ public class crearRecursos : MonoBehaviour {
 
     public void Crear(){
         Vector3 SpawnPosition = onHand.transform.position;
+        SpawnPosition.y = 0;
         this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
 		GameObject Recurso = Instantiate (Recursos, SpawnPosition, Quaternion.identity);
 
