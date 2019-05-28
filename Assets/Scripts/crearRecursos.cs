@@ -5,7 +5,6 @@ using UnityEngine;
 public class crearRecursos : MonoBehaviour {
 
 	public GameObject Recursos;
-    public GameObject Jugador;
 	public float RangoCreacion = 20f;
     public int arbol = 0;
     private GUIStyle guiStyle = new GUIStyle();
@@ -35,6 +34,7 @@ public class crearRecursos : MonoBehaviour {
             {
                 Invoke("Crear", 1.0f);
                 arbol += 1;
+                puntos -= 1;
             }
         }
 		

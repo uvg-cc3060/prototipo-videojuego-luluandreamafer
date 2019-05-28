@@ -1954,6 +1954,7 @@ GameObject:
   - component: {fileID: 209954902}
   - component: {fileID: 209954903}
   - component: {fileID: 209954909}
+  - component: {fileID: 209954910}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -2252,11 +2253,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 209954901}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4ab02978a878c543a5d685de96eb79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &209954910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 209954901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f9f176c294fe84493c3d9766341b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Recursos: {fileID: 1377331622712542, guid: b9eb627f7bb4c1748829f3f01ce72b68, type: 2}
+  RangoCreacion: 20
+  arbol: 0
 --- !u!1 &211932743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1335726306580732, guid: 23f312332b5cd5542ba196450880e89b,
@@ -2967,6 +2982,7 @@ GameObject:
   - component: {fileID: 1480771973}
   - component: {fileID: 279935498}
   - component: {fileID: 279935497}
+  - component: {fileID: 279935500}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -3004,6 +3020,20 @@ Transform:
   m_Father: {fileID: 209954904}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279935500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279935496}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f9f176c294fe84493c3d9766341b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Recursos: {fileID: 0}
+  RangoCreacion: 20
+  arbol: 0
 --- !u!1001 &280469708
 Prefab:
   m_ObjectHideFlags: 0
@@ -3526,7 +3556,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314600919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5f9f176c294fe84493c3d9766341b73, type: 3}
   m_Name: 
