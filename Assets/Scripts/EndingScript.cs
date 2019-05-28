@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Este metodo se va a llamar como al minuto de que haya empezado el juego
 public class EndingScript : MonoBehaviour
@@ -10,6 +11,8 @@ public class EndingScript : MonoBehaviour
     int casualties = 0;
     private bool winCondition = false;
     private GUIStyle guiStyle = new GUIStyle();
+    private float EndingSceneDelay = 40f;
+    private float timeElapsed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,12 @@ public class EndingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed > EndingSceneDelay)
+        {
+            SceneManager.LoadScene(sceneName: "MainMenu");
+        }
 
     }
 }

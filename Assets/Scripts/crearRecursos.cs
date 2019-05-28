@@ -18,7 +18,7 @@ public class crearRecursos : MonoBehaviour {
     private int ammo = 0;
     private int damage = 2;
     public static bool hasWeapon = false;
-    private float EndingSceneDelay = 10f;
+    private float EndingSceneDelay = 20f;
     private float timeElapsed = 0;
 
     // Use this for initialization
