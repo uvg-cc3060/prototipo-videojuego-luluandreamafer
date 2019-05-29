@@ -14,6 +14,12 @@ public class boss : MonoBehaviour
 	public levantarObjectos lift;
 	private float EndingSceneDelay = 32f;
 	private float timeElapsed = 0;
+	public Transform[] plant;
+	public bool[] isOnPlant;
+	public GameObject sporePlant1;
+	private Animator animator;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +34,11 @@ public class boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		isOnPlant[0] = true;
+		if (animator == null)
+		{
+			animator = plant[0].gameObject.GetComponentInChildren<Animator>();
+		}
 
 		timeElapsed += Time.deltaTime;
 
@@ -38,11 +48,13 @@ public class boss : MonoBehaviour
 		}
 
 		if (timeElapsed > 10f) {
-			speed = 4.5f;
+			PlaySpell ();
+		} else {
+			DisableSpores ();
 		}
 
 		if (timeElapsed > 20f) {
-			speed = 6.5f;
+			PlaySpell ();
 		}
 
 		if (timeElapsed >= 32f) {
@@ -77,7 +89,26 @@ public class boss : MonoBehaviour
 		}
 
 	}
+	public void DisableSpores()
+	{
+		sporePlant1.SetActive(false);
 
+	}
+
+	//Animations
+
+
+	public void PlaySpell()
+	{
+		animator.SetTrigger("Spell");
+		if (isOnPlant[0])
+		{
+			sporePlant1.SetActive(true);
+
+		}
+
+
+	}
 	float CalculateHealth(){
 		return health / maxhealth;
 	}
