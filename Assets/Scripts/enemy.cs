@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour {
     public EnemyAmmo ammo;
     private NavMeshAgent enemigo = null;
     public Camera jugador = null;

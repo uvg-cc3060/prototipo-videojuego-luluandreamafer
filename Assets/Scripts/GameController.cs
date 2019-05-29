@@ -30,7 +30,9 @@ public class GameController : MonoBehaviour
 
         if(timeElapsed>EndingSceneDelay)
         {
-            SceneManager.LoadScene(sceneName: "Oleada");
+            if ((SceneManager.GetActiveScene().name).Equals("demo")){
+                SceneManager.LoadScene(sceneName: "Oleada");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Z)) //Z para plantar
