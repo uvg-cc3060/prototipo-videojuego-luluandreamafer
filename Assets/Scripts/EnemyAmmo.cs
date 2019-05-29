@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyAmmo : MonoBehaviour {
 	private float fireSpeed = 0.4f;
-	public Camera character;
+	public Character character;
 
 	// Use this for initialization
 	void Start () {
+		this.transform.LookAt(character.transform);
 		
 	}
 	

@@ -14,13 +14,14 @@ public class RecogerArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (crearRecursos.hasWeapon==true)
+        if (Character.hasWeapon==true)
         {
             //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
             
-            this.transform.position = onHand.transform.position;
+            this.transform.position = onHand.transform.position; 
+            //this.transform.rotation = -30f;
             this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
-            
+            this.transform.LookAt(GameObject.Find("FirstPersonCharacter").transform); // la lanza ve hacia donde el personaje esta viendo 
 
             if (Input.GetMouseButtonDown(0) & !hitSomething)
             {
@@ -30,7 +31,7 @@ public class RecogerArma : MonoBehaviour
                 this.transform.position += Camera.main.transform.forward*2;
                 this.GetComponent<Rigidbody>().useGravity = true;
                 this.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 20;
-                crearRecursos.hasWeapon = false;
+                Character.hasWeapon = false;
 
 
             }
@@ -46,7 +47,7 @@ public class RecogerArma : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if ((collision.tag != "Player" & collision.tag!="Enemy") & !crearRecursos.hasWeapon)
+        if ((collision.tag != "Player" & collision.tag!="Enemy") & !Character.hasWeapon)
         {
             hitSomething = true;
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

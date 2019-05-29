@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour {
     public EnemyAmmo ammo;
     private NavMeshAgent enemigo = null;
-    public Camera jugador = null;
+    public Character jugador = null;
 
     public float attackDistance = 10.0f;
     public float chaseDistance = 60.0f;
@@ -31,6 +31,7 @@ public class enemy : MonoBehaviour {
         if ( distance < chaseDistance)
         {
             enemigo.SetDestination(jugador.transform.position);
+            this.transform.LookAt(jugador.transform);
             
             if(distance < attackDistance)
             {

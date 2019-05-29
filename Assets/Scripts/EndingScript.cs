@@ -7,18 +7,18 @@ using UnityEngine.SceneManagement;
 public class EndingScript : MonoBehaviour
 {
 
-    public static int total = crearRecursos.totalarboles + crearRecursos.arbol;
+    public static int total = GameController.totalarboles + GameController.sembrados;
     int casualties = 0;
     private bool winCondition = false;
     private GUIStyle guiStyle = new GUIStyle();
-    private float EndingSceneDelay = 40f;
+    private float EndingSceneDelay = 10f;
     private float timeElapsed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         casualties = Random.Range(1, total);
-        if (crearRecursos.getFraccion())
+        if (GameController.getFraccion())
         {
             winCondition = true;
         }
