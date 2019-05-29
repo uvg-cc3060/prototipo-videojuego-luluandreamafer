@@ -47,12 +47,14 @@ public class GameController : MonoBehaviour
         /* if ((SceneManager.GetActiveScene().name).Equals("demo")){
             ResourceSpawner.Create();
         }*/
+        OnGUI();
     }
 
     void OnGUI()
     {
         GUI.Label(new Rect(50,0,100,50),"Recursos = " + personaje.getPuntos());
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + sembrados);
+        GUI.Label(new Rect(50,0,100,50), "Salud =" + personaje.getHealth());
         /*if (totalarboles/arbol<=3) //menor o igual porque si es igual, es un tercio, si es menor es porque es mas de un tercio
         {
             guiStyle.fontSize = 50;
