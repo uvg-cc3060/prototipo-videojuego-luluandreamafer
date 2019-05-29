@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    private float EndingSceneDelay = 10f;//(60f * 10f); //10 minutos
+    private float EndingSceneDelay = (60f * 10f); //10 minutos
     public static int totalarboles = 0;
     public static int sembrados = 0; //arboles que lleva sembrados el jugador
     // Start is called before the first frame update

@@ -2071,7 +2071,6 @@ GameObject:
   - component: {fileID: 209954905}
   - component: {fileID: 209954902}
   - component: {fileID: 209954903}
-  - component: {fileID: 209954909}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -2371,23 +2370,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &209954909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209954901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f9f176c294fe84493c3d9766341b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHand: {fileID: 1507724768}
-  Recursos: {fileID: 1377331622712542, guid: b9eb627f7bb4c1748829f3f01ce72b68, type: 3}
-  Flecha: {fileID: 0}
-  Jugador: {fileID: 209954901}
-  RangoCreacion: 2
 --- !u!1 &211932743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1335726306580732, guid: 23f312332b5cd5542ba196450880e89b,
@@ -20739,16 +20721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6b7dee299fcbe47a46fe44b9d1ce66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 114454392668806352, guid: 750c8766efe894c3fa5296afc4a25279, type: 3}
-  enemigo: {fileID: 0}
-  jugador: {fileID: 1480771973}
-  attackDistance: 30
-  chaseDistance: 40
-  movespeed: 1
-  turnspeed: 45
-  ammoSpeed: 0.5
-  fireTime: 0
-  damage: 2
 --- !u!195 &1740738432
 NavMeshAgent:
   m_ObjectHideFlags: 0
