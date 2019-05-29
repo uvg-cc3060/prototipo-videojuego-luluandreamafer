@@ -8,6 +8,7 @@ public class EnemyAmmo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.transform.LookAt(character.transform);
 		
 	}
 	

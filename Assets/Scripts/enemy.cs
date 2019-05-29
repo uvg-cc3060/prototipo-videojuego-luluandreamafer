@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour {
         if ( distance < chaseDistance)
         {
             enemigo.SetDestination(jugador.transform.position);
+            this.transform.LookAt(jugador.transform);
             
             if(distance < attackDistance)
             {

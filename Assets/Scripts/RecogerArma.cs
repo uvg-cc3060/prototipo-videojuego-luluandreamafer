@@ -22,7 +22,6 @@ public class RecogerArma : MonoBehaviour
             //this.transform.rotation = -30f;
             this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
             this.transform.LookAt(GameObject.Find("FirstPersonCharacter").transform); // la lanza ve hacia donde el personaje esta viendo 
-            
 
             if (Input.GetMouseButtonDown(0) & !hitSomething)
             {
