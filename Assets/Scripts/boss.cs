@@ -14,9 +14,6 @@ public class boss : MonoBehaviour
 	public levantarObjectos lift;
 	private float EndingSceneDelay = 32f;
 	private float timeElapsed = 0;
-	public int spinx = 0;
-	public int spiny = 0;
-	public int spinz = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +29,7 @@ public class boss : MonoBehaviour
     void Update()
     {
 
-		transform.Rotate (spinx, spiny, spinz);
+
 		timeElapsed += Time.deltaTime;
 
 		if(timeElapsed>EndingSceneDelay)
