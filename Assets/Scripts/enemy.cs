@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour {
     public EnemyAmmo ammo;
     private NavMeshAgent enemigo = null;
-    public Character jugador = null;
+    public GameObject jugador = null;
 
     public float attackDistance = 10.0f;
     public float chaseDistance = 60.0f;
@@ -53,9 +53,10 @@ public class Enemy : MonoBehaviour {
         if (collision.tag=="Weapon") {
             damage--;
         }
-        if (damage == 0)
+        if (damage <= 0)
         {
             Destroy(this.gameObject);
+            GameController.enemiesKilled++;
         }
         
     }

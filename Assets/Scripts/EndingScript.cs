@@ -17,6 +17,7 @@ public class EndingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeElapsed = 0;
         casualties = Random.Range(1, total);
         if (GameController.getFraccion())
         {
@@ -46,7 +47,7 @@ public class EndingScript : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
 
-        if (timeElapsed > EndingSceneDelay)
+        if (timeElapsed > GameController.EndingSceneDelay)
         {
             SceneManager.LoadScene(sceneName: "MainMenu");
         }

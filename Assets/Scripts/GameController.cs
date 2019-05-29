@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    private float EndingSceneDelay = 30f;//ahorita esta como 30 seg//(60f * 10f); //10 minutos
+    public static float EndingSceneDelay = (60f * 10f); //10 minutos 30f;//ahorita esta como 30 seg//
     public static int totalarboles = 0;
     public static int sembrados = 0; //arboles que lleva sembrados el jugador
     // Start is called before the first frame update
@@ -18,8 +18,11 @@ public class GameController : MonoBehaviour
     /* lo siguiente esta aqui solo para mientras, luego se pasara a resource spawner */
     public GameObject recurso;
     public float RangoCreacion = 20f;
+    public static int enemiesKilled = 0;
     void Start () 
     {
+        enemiesKilled = 0;
+        timeElapsed =0;
         totalarboles = GameObject.FindGameObjectsWithTag("Tree").Length;
     }
 
@@ -47,6 +50,9 @@ public class GameController : MonoBehaviour
         /* if ((SceneManager.GetActiveScene().name).Equals("demo")){
             ResourceSpawner.Create();
         }*/
+        if (enemiesKilled >= 2){
+            SceneManager.LoadScene(sceneName: "BossBosque");
+        }
         OnGUI();
     }
 
@@ -54,7 +60,8 @@ public class GameController : MonoBehaviour
     {
         GUI.Label(new Rect(50,0,100,50),"Recursos = " + personaje.getPuntos());
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + sembrados);
-        GUI.Label(new Rect(50,0,100,50), "Salud =" + personaje.getHealth());
+        GUI.Label(new Rect(Screen.width/2 +50,0,100,50), "Salud =" + personaje.getHealth());
+        GUI.Label(new Rect(Screen.width/2 -100,0,100,50), "Enemigos matados =" + enemiesKilled);
         /*if (totalarboles/arbol<=3) //menor o igual porque si es igual, es un tercio, si es menor es porque es mas de un tercio
         {
             guiStyle.fontSize = 50;

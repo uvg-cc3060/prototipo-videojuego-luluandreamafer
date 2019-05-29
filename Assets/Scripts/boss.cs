@@ -25,9 +25,10 @@ public class boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		health = maxhealth;
-		slider.value = CalculateHealth ();
-		player = GameObject.FindGameObjectWithTag("Player").transform;
+			timeElapsed =0;
+			health = maxhealth;
+			slider.value = CalculateHealth ();
+			player = GameObject.FindGameObjectWithTag("Player").transform;
 
 
     }

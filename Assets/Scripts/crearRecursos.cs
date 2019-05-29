@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class crearRecursos : MonoBehaviour {
 
     public Transform onHand;
-    public GameObject Recursos;
+    public GameObject Recursos; 
     public GameObject Flecha;
     public GameObject Jugador;
 	public float RangoCreacion = 20f;

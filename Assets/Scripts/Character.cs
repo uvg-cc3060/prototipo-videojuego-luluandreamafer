@@ -9,22 +9,23 @@ public class Character : MonoBehaviour
     public static bool hasWeapon = false;
     private int puntos = 0; //en realidad esto se llama con PlayerPrefs
 	private float EndingSceneDelay = 32f;
-	private float timeElapsed = 0;
-	private GUIStyle guiLose = new GUIStyle();
-    private int health = 100; // "cantidad de vida del personaje"
+	private float timeElapsed = 0; 
+	//private GUIStyle guiLose = new GUIStyle();
+    private int health = 200; // "cantidad de vida del personaje"
     private int ammo =0; //cantidad de municiones que tiene. se modificara mas adelante para que dependa del arma.
+
 
     // Start is called before the first frame update
     void Start()
     {
-		
+		health = 200;
     }
 
     // Update is called once per frame
     void Update()
     {
 		if (timeElapsed >= 10f) {
-			health -= 20;
+			health -= 1;
 		}
 		if (health <= 0) {
 			SceneManager.LoadScene ("MainMenu");

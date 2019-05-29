@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Oleada.unity
     guid: 25cf7c18ae127d04ba152cdbff4792ae
+  - enabled: 1
+    path: Assets/Scenes/BossBosque.unity
+    guid: 2cd54ffe0fae06a45893a84ae5c82853
   m_configObjects: {}
