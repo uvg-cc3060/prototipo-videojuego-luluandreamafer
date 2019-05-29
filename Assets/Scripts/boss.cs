@@ -21,6 +21,7 @@ public class boss : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +36,11 @@ public class boss : MonoBehaviour
     void Update()
     {
 		isOnPlant[0] = true;
+
 		if (animator == null)
 		{
 			animator = plant[0].gameObject.GetComponentInChildren<Animator>();
+			//animator = plant [1].gameObject.GetComponentInChildren<Animator> ();
 		}
 
 		timeElapsed += Time.deltaTime;
@@ -47,14 +50,16 @@ public class boss : MonoBehaviour
 			lift.Switch = false;
 		}
 
-		if (timeElapsed > 10f) {
+		if (timeElapsed >= 10f) {
 			PlaySpell ();
+			speed = 4.5f;
 		} else {
 			DisableSpores ();
 		}
 
 		if (timeElapsed > 20f) {
 			PlaySpell ();
+			speed = 6.5f;
 		}
 
 		if (timeElapsed >= 32f) {
@@ -106,6 +111,8 @@ public class boss : MonoBehaviour
 			sporePlant1.SetActive(true);
 
 		}
+
+
 
 
 	}

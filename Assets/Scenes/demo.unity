@@ -13699,6 +13699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13754,11 +13759,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}
 --- !u!4 &1125785016 stripped
@@ -19663,6 +19663,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19718,11 +19723,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}
 --- !u!4 &1602134158 stripped
@@ -21426,6 +21426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21481,11 +21486,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}
 --- !u!1 &1779854700 stripped
@@ -22728,6 +22728,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22783,11 +22788,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}
 --- !u!4 &1873291681 stripped
@@ -22871,6 +22871,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22926,11 +22931,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}
 --- !u!4 &1894584617 stripped
@@ -25464,6 +25464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 209954910}
     - target: {fileID: 4242479865903528004, guid: 6372f5249cdaa4d30b653e7621ad42be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25519,10 +25524,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1666033701729221914, guid: 6372f5249cdaa4d30b653e7621ad42be,
-        type: 3}
-      propertyPath: jugador
-      value: 
-      objectReference: {fileID: 209954910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6372f5249cdaa4d30b653e7621ad42be, type: 3}

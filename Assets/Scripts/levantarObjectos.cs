@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class levantarObjectos : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class levantarObjectos : MonoBehaviour
 		{
 			
 			transform.position = Vector3.MoveTowards(transform.position, DestinationSpot.position, Speed);
+			SceneManager.LoadScene ("MainMenu");
 
 		}
 	}
