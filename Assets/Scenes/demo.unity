@@ -2071,6 +2071,8 @@ GameObject:
   - component: {fileID: 209954905}
   - component: {fileID: 209954902}
   - component: {fileID: 209954903}
+  - component: {fileID: 209954909}
+  - component: {fileID: 209954910}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -2370,6 +2372,35 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &209954909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209954901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f9f176c294fe84493c3d9766341b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHand: {fileID: 1507724768}
+  Recursos: {fileID: 1377331622712542, guid: b9eb627f7bb4c1748829f3f01ce72b68, type: 3}
+  Flecha: {fileID: 0}
+  Jugador: {fileID: 209954901}
+  RangoCreacion: 20
+--- !u!114 &209954910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209954901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5263d70aa92e4b3bba348a10c0989e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211932743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1335726306580732, guid: 23f312332b5cd5542ba196450880e89b,
@@ -3198,7 +3229,6 @@ GameObject:
   - component: {fileID: 1480771973}
   - component: {fileID: 279935498}
   - component: {fileID: 279935497}
-  - component: {fileID: 279935500}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -3240,18 +3270,6 @@ Transform:
   m_Father: {fileID: 209954904}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &279935500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279935496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5263d70aa92e4b3bba348a10c0989e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &280469708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14978,7 +14996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28587df23e28f4cd89526b0e4a8fa836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personaje: {fileID: 279935500}
+  personaje: {fileID: 0}
   recurso: {fileID: 1377331622712542, guid: b9eb627f7bb4c1748829f3f01ce72b68, type: 3}
   RangoCreacion: 20
 --- !u!4 &1238406578
@@ -20721,6 +20739,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6b7dee299fcbe47a46fe44b9d1ce66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammo: {fileID: 0}
+  jugador: {fileID: 0}
+  attackDistance: 10
+  chaseDistance: 60
+  movespeed: 1
+  turnspeed: 45
+  damage: 1
 --- !u!195 &1740738432
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20757,6 +20782,25 @@ CapsuleCollider:
   m_Height: 0.05
   m_Direction: 1
   m_Center: {x: 0.000010497868, y: -0.009474912, z: -0.0027676108}
+--- !u!114 &1740738435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740738427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6b7dee299fcbe47a46fe44b9d1ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: {fileID: 114454392668806352, guid: 750c8766efe894c3fa5296afc4a25279, type: 3}
+  jugador: {fileID: 1480771973}
+  attackDistance: 10
+  chaseDistance: 60
+  movespeed: 1
+  turnspeed: 45
+  damage: 1
 --- !u!4 &1742171857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4409070438433976, guid: c0aa33e678586aa43a1a9254fdfdfb4d,

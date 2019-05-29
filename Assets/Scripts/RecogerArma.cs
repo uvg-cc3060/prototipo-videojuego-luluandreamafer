@@ -18,8 +18,10 @@ public class RecogerArma : MonoBehaviour
         {
             //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
             
-            this.transform.position = onHand.transform.position;
+            this.transform.position = onHand.transform.position; 
+            //this.transform.rotation = -30f;
             this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
+            this.transform.LookAt(GameObject.Find("FirstPersonCharacter").transform); // la lanza ve hacia donde el personaje esta viendo 
             
 
             if (Input.GetMouseButtonDown(0) & !hitSomething)
