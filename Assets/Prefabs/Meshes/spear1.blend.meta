@@ -1,5 +1,6 @@
 fileFormatVersion: 2
-guid: 03dec2590fcf6a942acd63f02b5522fb
+guid: eaccef4ad28c2428f8e92b3faee0f000
+
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +9,7 @@ ModelImporter:
     2100000: Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Circle
+    4300000: Spear
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
