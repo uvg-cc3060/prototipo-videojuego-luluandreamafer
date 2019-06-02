@@ -38,7 +38,8 @@ public class Character : MonoBehaviour
     {
         if (other.tag == "Recurso")//Si toca el tag "Recurso"  que suba puntos
         {
-            puntos += 1;
+            GameController.recursos += 1;
+            puntos +=1;
             Destroy(other.gameObject);
 
         }

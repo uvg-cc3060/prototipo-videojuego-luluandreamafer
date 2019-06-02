@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    public static float EndingSceneDelay = (60f * 10f); //10 minutos 30f;//ahorita esta como 30 seg//
+    public static float EndingSceneDelay =   30f;//ahorita esta como 30 seg// (60f * 10f); //10 minutos
     public static int totalarboles = 0;
     public static int sembrados = 0; //arboles que lleva sembrados el jugador
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public GameObject recurso;
     public float RangoCreacion = 20f;
     public static int enemiesKilled = 0;
+    public static int recursos =0;
     void Start () 
     {
         enemiesKilled = 0;
@@ -40,17 +41,18 @@ public class GameController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //Z para plantar
         {
-            if (personaje.getPuntos() > 0)
+            if (recursos > 0)
             {
-                Invoke("Crear", 1.0f);
+                Invoke("Create", 1.0f);
                 sembrados += 1;
+                recursos -=1;
                 personaje.addPuntos(1);
             }
         }
         /* if ((SceneManager.GetActiveScene().name).Equals("demo")){
             ResourceSpawner.Create();
         }*/
-        if (enemiesKilled >= 2){
+        if (enemiesKilled >= 3){
             SceneManager.LoadScene(sceneName: "BossBosque");
         }
         OnGUI();
@@ -58,10 +60,11 @@ public class GameController : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(50,0,100,50),"Recursos = " + personaje.getPuntos());
+        GUI.Label(new Rect(50,0,100,50),"Recursos = " + recursos);
         GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), "Arboles =" + sembrados);
         GUI.Label(new Rect(Screen.width/2 +50,0,100,50), "Salud =" + personaje.getHealth());
         GUI.Label(new Rect(Screen.width/2 -100,0,100,50), "Enemigos matados =" + enemiesKilled);
+        GUI.Label(new Rect(Screen.width/2 -400,0,100,50), "Tiempo para oleada =" + (EndingSceneDelay - timeElapsed));
         /*if (totalarboles/arbol<=3) //menor o igual porque si es igual, es un tercio, si es menor es porque es mas de un tercio
         {
             guiStyle.fontSize = 50;
@@ -90,10 +93,18 @@ public class GameController : MonoBehaviour
     public void Create(){
         Vector3 SpawnPosition = new Vector3 (0,0,0);
 		SpawnPosition = personaje.transform.position - Random.onUnitSphere * RangoCreacion;
+        SpawnPosition.y =0;
 		SpawnPosition = new Vector3 (SpawnPosition.x, SpawnPosition.y, SpawnPosition.z);
 
 		GameObject Recurso = Instantiate (recurso, SpawnPosition, Quaternion.identity);
 
     }
+    public void Crear(){
+        Vector3 SpawnPosition = personaje.transform.position;
+        SpawnPosition.y = 0;
+        this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
+		GameObject Recurso = Instantiate (recurso, SpawnPosition, Quaternion.identity);
+
+	}
     public int getArboles(){return sembrados;}
 }
